@@ -1,0 +1,256 @@
+.article_layout_main {
+    display: grid;
+    grid-template-rows: auto 400px auto 250px;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: 
+        "nav"
+        "hd"
+        "main"
+        "footer";
+}
+
+.article_header {
+    grid-area: hd;
+    padding: 0 10% 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4e4e50;
+}
+
+.article_title {
+    color: #c3073f;
+}
+
+header img {
+    width: 300px;
+    height: auto;
+    margin: 2em auto;
+    border-radius: 50%;
+}
+
+.article_layout_content {
+    grid-area: main;
+    margin: auto 10%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 5fr 2fr;
+    grid-template-areas:
+        "content sidebar";
+}
+
+main {
+    grid-area: content;
+    padding: 1em;
+}
+
+.article_general {
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.social_sharing {
+    display: flex;
+    flex-direction: column;
+}
+
+.social_sharing_icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.social_sharing_icons img {
+    width: 1em;
+    margin: auto 0.7em;
+}
+
+.publish_date {
+    text-align: center;
+}
+
+.publish_author {
+    text-align: right;
+}
+
+.article_general p {
+    margin: 3px;
+    font-size: 14px;
+}
+
+.intro p {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.article_sidebar {
+    grid-area: sidebar;
+    padding: 1.3em;
+    border-left: 1px solid #4e4e50;
+}
+
+.article_sidebar hr {
+    border-top: 1px solid #4e4e50;
+    border-left: none;
+    width: 70%;
+    margin: 10px auto 30px auto;
+}
+
+.author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #950740;
+    text-align: center;
+}
+
+.author img {
+    border-radius: 50%;
+    width: 70%;
+    height: auto;
+    margin: 5px auto;
+}
+
+.author p {
+    margin: 5px 0;
+}
+
+.author .name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.author .title {
+    font-size: 10px;
+    color: #4e4e50;
+}
+
+.author .bio {
+    font-size: 12px;
+}
+
+.related h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #950740;
+    text-align: center;
+}
+
+.related .card {
+    margin: auto auto 1em auto;
+}
+
+.related .preview_text {
+    padding: 0.7em 1em; 
+}
+
+.related .preview_text h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #950740;
+    text-align: center;
+}
+
+.related .preview_text p {
+    font-size: 12px;
+}
+
+.related .preview_text .link_button {
+    font-size: 12px;
+}
+
+/* mobile */ 
+@media screen and (max-width: 30em) {
+    .article_layout_main {
+        grid-template-rows: auto auto auto 250px;
+    }
+
+    .article_header {
+        padding: 20px 10%;
+        flex-direction: column;
+        align-content: center;
+        justify-items: center;
+    }
+
+    header img {
+        width: 70%;
+        margin: 20px auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    header h2 {
+        text-align: center;
+    }
+
+    .article_layout_content {
+        margin: auto;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "content"
+            "sidebar";
+    
+    }
+
+    .article_sidebar {
+        border-left: none;
+    }
+
+    .author {
+        border-top: 1px solid #4e4e50;
+    }
+
+    .author img {
+        width: 40%;
+    }
+}
+
+/*tablet*/
+
+@media screen and (max-width: 48em) {
+    .article_layout_main {
+        grid-template-rows: auto auto auto 250px;
+    }
+
+    .article_header {
+        padding: 20px 10%;
+    }
+
+    header img {
+        width: 40%;
+        margin: 20px;
+    }
+
+    .article_layout_content {
+        margin: auto;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "content"
+            "sidebar";
+    }
+
+    .article_sidebar {
+        border-left: none;
+        margin: auto 10%;
+    }
+
+    .author {
+        border-top: 1px solid #4e4e50;
+        padding-top: 1em;
+    }
+
+    .author img {
+        width: 30%;
+    }
+}

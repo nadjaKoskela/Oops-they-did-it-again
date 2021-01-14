@@ -1,0 +1,156 @@
+.index_layout_main {
+    display: grid;
+    grid-template-rows: auto 300px auto 250px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "nav"
+        "hd"
+        "main"
+        "footer";
+}
+
+.index_header {
+    grid-area: hd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #1a1a1d;
+    color: #950740;
+    margin-bottom: 15px;
+}
+
+.index_layout_content {
+    grid-area: main;
+    margin: auto 15%;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "top_story"
+        "category_people"
+        "category_unsolved";
+    grid-gap: 15px;
+}
+
+.top_story {
+    grid-area: top_story;
+}
+
+.top_story_card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "label label"
+        "img story";
+}
+
+.top_story_card .preview_image {
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+}
+
+.top_story_card .preview_text {
+    grid-area: story;
+}
+
+.preview_text {
+    padding: 20px 40px;
+}
+
+.category_people {
+    grid-area: category_people;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "label label"
+        "category_preview1 category_preview2";
+    grid-gap: 0 15px;
+}
+
+.category_unsolved {
+    grid-area: category_unsolved;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "label label"
+        "category_preview1 category_preview2";
+    grid-gap: 0 15px;
+}
+
+.category_preview1 {
+    grid-area: category_preview1;
+}
+
+.category_preview2 {
+    grid-area: category_preview2;
+}
+
+.preview_image img {
+    width: 100%;
+}
+
+.preview_label {
+    grid-area: label;
+    font-size: 22px;
+    color: #1a1a1d;
+}
+
+/* mobile */
+@media only screen and (max-width: 30em) {
+
+    .index_header {
+        padding: 30px;
+    }
+
+    .index_layout_content {
+        margin: auto;
+    }
+
+    .top_story_card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "label"
+            "img"
+            "story";
+        margin-bottom: 15px;
+    }
+
+    .category_people {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "label"
+            "category_preview1"
+            "category_preview2";
+    }
+    
+    .category_unsolved {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "label"
+            "category_preview1"
+            "category_preview2";
+    }
+
+    .category_preview1,
+    .category_preview2 {
+        margin-bottom: 15px;
+    }
+}
+
+/* tablet */
+@media screen and (max-width: 48em) {
+    .index_layout_content {
+        margin: auto 1em;
+    }
+}
+
+
+

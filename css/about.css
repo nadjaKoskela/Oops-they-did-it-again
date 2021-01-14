@@ -1,0 +1,34 @@
+.about_layout_main {
+    display: grid;
+    grid-template-rows: auto auto auto 250px;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas: 
+        "nav"
+        "hd"
+        "main"
+        "footer";
+}
+
+.about_header {
+    grid-area: hd;
+    background-color: #1a1a1d;
+    color: #950740;
+    padding: 30px;
+    text-align: center;
+}
+
+.about_layout_content {
+    grid-area: main;
+    margin: auto 15%;
+    padding-bottom: 30px;
+}
+
+.about_layout_content #contact {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 48em) {
+    .about_layout_content {
+        margin: auto;
+    }
+}
